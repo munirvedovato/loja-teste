@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vedovato_VedovatoGrid extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_VedovatoGrid
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<layout>
+    
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="vedovato_vedovatogrid"><name>vedovatogrid_comments</name><path>vedovato_vedovatogrid/vedovatogrid_customer_comment</path><label>vedovatogrids Comments</label></action>
+        </reference>
+    </customer_account>
+    <vedovato_vedovatogrid_vedovatogrid_index translate="label" module="vedovato_vedovatogrid">
+        <label>Vedovatogrids list</label>
+        <update handle="page_two_columns_left" />
+        <reference name="content">
+            <block type="vedovato_vedovatogrid/vedovatogrid_list" name="vedovatogrid_list" template="vedovato_vedovatogrid/vedovatogrid/list.phtml" />
+        </reference>
+    </vedovato_vedovatogrid_vedovatogrid_index>
+    <vedovato_vedovatogrid_vedovatogrid_view translate="label" module="vedovato_vedovatogrid">
+        <label>Vedovatogrid view page</label>
+        <update handle="page_two_columns_left" />
+        <reference name="content">
+            <block type="vedovato_vedovatogrid/vedovatogrid_view" name="vedovatogrid_view" template="vedovato_vedovatogrid/vedovatogrid/view.phtml" />
+            <block type="vedovato_vedovatogrid/vedovatogrid_comment_list" name="vedovatogrid.comments_list" as="vedovatogrid_comment_list" template="vedovato_vedovatogrid/vedovatogrid/comment/list.phtml">
+                <block type="vedovato_vedovatogrid/vedovatogrid_comment_form" name="comment_form" as="comment_form" template="vedovato_vedovatogrid/vedovatogrid/comment/form.phtml" />
+            </block>
+        </reference>
+    </vedovato_vedovatogrid_vedovatogrid_view>
+    <vedovato_vedovatogrid_vedovatogrid_rss translate="label" module="vedovato_vedovatogrid">
+        <label>Vedovatogrids rss feed</label>
+        <block type="vedovato_vedovatogrid/vedovatogrid_rss" output="toHtml" name="vedovato_vedovatogrid.vedovatogrid.rss" />
+    </vedovato_vedovatogrid_vedovatogrid_rss>
+    <rss_index_index>
+        <reference name="content">
+            <block type="vedovato_vedovatogrid/rss" name="vedovatogrid.rss" template="vedovato_vedovatogrid/rss.phtml">
+                <action method="addFeed" ifconfig="vedovato_vedovatogrid/vedovatogrid/rss" translate="label" module="vedovato_vedovatogrid">
+                    <label>Vedovatogrids</label>
+                    <url helper="vedovato_vedovatogrid/vedovatogrid/getRssUrl" />
+                </action>
+            </block>
+        </reference>
+    </rss_index_index>
+    <vedovato_vedovatogrid_vedovatogrid_customer_comment_index translate="label" module="vedovato_vedovatogrid">
+        <label>My Vedovatogrids comments</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="vedovato_vedovatogrid/vedovatogrid_customer_comment_list" name="customer_vedovatogrid_comments" template="vedovato_vedovatogrid/vedovatogrid/customer/comment/list.phtml"/>
+        </reference>
+    </vedovato_vedovatogrid_vedovatogrid_customer_comment_index>
+    <vedovato_vedovatogrid_vedovatogrid_customer_comment_view translate="label" module="vedovato_vedovatogrid">
+        <label>My Vedovatogrids comment view</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="vedovato_vedovatogrid/vedovatogrid_customer_comment_view" name="customer_vedovatogrid_comment" template="vedovato_vedovatogrid/vedovatogrid/customer/comment/view.phtml"/>
+        </reference>
+    </vedovato_vedovatogrid_vedovatogrid_customer_comment_view>
+</layout>

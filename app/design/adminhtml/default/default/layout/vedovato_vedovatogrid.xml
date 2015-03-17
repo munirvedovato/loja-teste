@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vedovato_VedovatoGrid extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_VedovatoGrid
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_vedovatogrid_vedovatogrid_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>vedovato_vedovatogrid/vedovatogrid</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="vedovato_vedovatogrid/adminhtml_vedovatogrid" name="vedovatogrid" />
+
+        </reference>
+    </adminhtml_vedovatogrid_vedovatogrid_index>
+    <adminhtml_vedovatogrid_vedovatogrid_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="vedovato_vedovatogrid/adminhtml_vedovatogrid_grid" name="vedovatogrid_grid"/>
+        </block>
+    </adminhtml_vedovatogrid_vedovatogrid_grid>
+    <!-- Vedovatogrid add/edit action -->
+    <adminhtml_vedovatogrid_vedovatogrid_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>vedovato_vedovatogrid/vedovatogrid</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="vedovato_vedovatogrid/adminhtml_vedovatogrid_edit" name="vedovatogrid_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="vedovato_vedovatogrid/adminhtml_vedovatogrid_edit_tabs" name="vedovatogrid_tabs"></block>
+        </reference>
+    </adminhtml_vedovatogrid_vedovatogrid_edit>
+
+    <adminhtml_vedovatogrid_vedovatogrid_comment_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>vedovato_vedovatogrid/vedovatogrid_comment</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="vedovato_vedovatogrid/adminhtml_vedovatogrid_comment" name="vedovatogrid_comment_grid"/>
+        </reference>
+    </adminhtml_vedovatogrid_vedovatogrid_comment_index>
+    <adminhtml_vedovatogrid_vedovatogrid_comment_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="vedovato_vedovatogrid/adminhtml_vedovatogrid_comment_grid" name="vedovatogrid_comment_grid"/>
+        </block>
+    </adminhtml_vedovatogrid_vedovatogrid_comment_grid>
+    <adminhtml_vedovatogrid_vedovatogrid_comment_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>vedovato_vedovatogrid/vedovatogrid_comment</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="vedovato_vedovatogrid/adminhtml_vedovatogrid_comment_edit" name="vedovatogrid_comment_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="vedovato_vedovatogrid/adminhtml_vedovatogrid_comment_edit_tabs" name="vedovatogrid_comment_tabs"></block>
+        </reference>
+    </adminhtml_vedovatogrid_vedovatogrid_comment_edit>
+</layout>

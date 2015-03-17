@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vedovato_Faq extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_Faq
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_faq_question_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>vedovato_faq/question</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="vedovato_faq/adminhtml_question" name="question" />
+
+        </reference>
+    </adminhtml_faq_question_index>
+    <adminhtml_faq_question_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="vedovato_faq/adminhtml_question_grid" name="question_grid"/>
+        </block>
+    </adminhtml_faq_question_grid>
+    <!-- Question add/edit action -->
+    <adminhtml_faq_question_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>vedovato_faq/question</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="vedovato_faq/adminhtml_question_edit" name="question_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="vedovato_faq/adminhtml_question_edit_tabs" name="question_tabs"></block>
+        </reference>
+    </adminhtml_faq_question_edit>
+
+</layout>

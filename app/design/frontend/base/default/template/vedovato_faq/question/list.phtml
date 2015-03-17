@@ -1,0 +1,44 @@
+<?php 
+/**
+ * Vedovato_Faq extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_Faq
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Question list template
+ *
+ * @category    Vedovato
+ * @package     Vedovato_Faq
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php $_questions = $this->getQuestions(); ?>
+<div class="page-title question-title">
+    <h1><?php echo Mage::helper('vedovato_faq')->__('Questions') ?></h1>
+</div>
+<?php if ($_questions->getSize() > 0) :?>
+    <?php echo $this->getPagerHtml(); ?>
+    <div class="question-list-container">
+    <?php foreach ($_questions as $_question) : ?>
+        <div class="question-list-item">
+            <a href="<?php echo $_question->getQuestionUrl()?>">
+                <?php echo $_question->getPergunta();?>
+            </a><br />
+        </div>
+    <?php endforeach;?>
+    </div>
+    <?php echo $this->getPagerHtml(); ?>
+<?php else : ?>
+    <?php echo Mage::helper('vedovato_faq')->__('There are no questions at this moment');?>
+<?php endif;?>

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vedovato_Faq extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_Faq
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Vedovato_Faq>
+            <version>1.0.0</version>
+        </Vedovato_Faq>
+    </modules>
+    <global>
+        <resources>
+            <vedovato_faq_setup>
+                <setup>
+                    <module>Vedovato_Faq</module>
+                    <class>Vedovato_Faq_Model_Resource_Setup</class>
+                </setup>
+            </vedovato_faq_setup>
+        </resources>
+        <blocks>
+            <vedovato_faq>
+                <class>Vedovato_Faq_Block</class>
+            </vedovato_faq>
+        </blocks>
+        <helpers>
+            <vedovato_faq>
+                <class>Vedovato_Faq_Helper</class>
+            </vedovato_faq>
+        </helpers>
+        <models>
+            <vedovato_faq>
+                <class>Vedovato_Faq_Model</class>
+                <resourceModel>vedovato_faq_resource</resourceModel>
+            </vedovato_faq>
+            <vedovato_faq_resource>
+                <class>Vedovato_Faq_Model_Resource</class>
+                <entities>
+                    <question>
+                        <table>vedovato_faq_question</table>
+                    </question>
+                    <question_store>
+                        <table>vedovato_faq_question_store</table>
+                    </question_store>
+                </entities>
+            </vedovato_faq_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <vedovato_faq>
+                    <file>vedovato_faq.xml</file>
+                </vedovato_faq>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Vedovato_Faq>
+                    <files>
+                        <default>Vedovato_Faq.csv</default>
+                    </files>
+                </Vedovato_Faq>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Vedovato_Faq before="Mage_Adminhtml">Vedovato_Faq_Adminhtml</Vedovato_Faq>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <vedovato_faq>
+                <use>standard</use>
+                <args>
+                    <module>Vedovato_Faq</module>
+                    <frontName>faq</frontName>
+                </args>
+            </vedovato_faq>
+        </routers>
+        <layout>
+            <updates>
+                <vedovato_faq>
+                    <file>vedovato_faq.xml</file>
+                </vedovato_faq>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Vedovato_Faq>
+                    <files>
+                        <default>Vedovato_Faq.csv</default>
+                    </files>
+                </Vedovato_Faq>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <vedovato_faq>
+            <question>
+                <breadcrumbs>1</breadcrumbs>
+            </question>
+        </vedovato_faq>
+    </default>
+</config>

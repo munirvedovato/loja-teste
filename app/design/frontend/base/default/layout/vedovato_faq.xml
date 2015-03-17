@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vedovato_Faq extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_Faq
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<layout>
+    <default>
+        <reference name="footer_links">
+            <action method="addLink" translate="label title" module="vedovato_faq">
+                <label>Questions</label>
+                <url helper="vedovato_faq/question/getQuestionsUrl" />
+                <title>Questions</title>
+                <prepare />
+                <urlParams/>
+                <position>120</position>
+            </action>
+        </reference>
+    </default>
+    <vedovato_faq_question_index translate="label" module="vedovato_faq">
+        <label>Questions list</label>
+        <update handle="page_one_column" />
+        <reference name="content">
+            <block type="vedovato_faq/question_list" name="question_list" template="vedovato_faq/question/list.phtml" />
+        </reference>
+    </vedovato_faq_question_index>
+    <vedovato_faq_question_view translate="label" module="vedovato_faq">
+        <label>Question view page</label>
+        <update handle="page_one_column" />
+        <reference name="content">
+            <block type="vedovato_faq/question_view" name="question_view" template="vedovato_faq/question/view.phtml" />
+        </reference>
+    </vedovato_faq_question_view>
+</layout>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vedovato_VedovatoGrid extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_VedovatoGrid
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<widgets>
+    <vedovatogrid_vedovatogrid_view type="vedovato_vedovatogrid/vedovatogrid_widget_view" translate="name description" module="vedovato_vedovatogrid">
+        <name>Vedovatogrid view</name>
+        <description>Vedovatogrid view widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <vedovatogrid_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Vedovatogrid</label>
+                <type>label</type>
+                <helper_block>
+                    <type>vedovato_vedovatogrid/adminhtml_vedovatogrid_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Vedovatogrid</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>120</sort_order>
+            </vedovatogrid_id>
+        </parameters>
+    </vedovatogrid_vedovatogrid_view>
+    <vedovatogrid_vedovatogrid_link type="vedovato_vedovatogrid/vedovatogrid_widget_link" translate="name description" module="vedovato_vedovatogrid">
+        <name>Vedovatogrid link</name>
+        <description>Vedovatogrid link widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <vedovatogrid_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Vedovatogrid</label>
+                <type>label</type>
+                <helper_block>
+                    <type>vedovato_vedovatogrid/adminhtml_vedovatogrid_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Vedovatogrid</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>130</sort_order>
+            </vedovatogrid_id>
+        </parameters>
+    </vedovatogrid_vedovatogrid_link>
+</widgets>

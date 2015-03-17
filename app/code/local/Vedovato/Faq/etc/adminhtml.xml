@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vedovato_Faq extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_Faq
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <vedovato_faq translate="title" module="vedovato_faq">
+                                        <title>Faq</title>
+                                    </vedovato_faq>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <vedovato_faq translate="title" module="vedovato_faq">
+                        <title>Perguntas Frequentes</title>
+                        <children>
+                            <question translate="title" module="vedovato_faq">
+                                <title>Question</title>
+                                <sort_order>0</sort_order>
+                            </question>
+                        </children>
+                    </vedovato_faq>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <vedovato_faq translate="title" module="vedovato_faq">
+            <title>Perguntas Frequentes</title>
+            <sort_order>87</sort_order>
+            <children>
+                <question translate="title" module="vedovato_faq">
+                    <title>Question</title>
+                    <action>adminhtml/faq_question</action>
+                    <sort_order>0</sort_order>
+                </question>
+            </children>
+        </vedovato_faq>
+    </menu>
+</config>

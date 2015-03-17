@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vedovato_VedovatoGrid extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_VedovatoGrid
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Vedovato_VedovatoGrid>
+            <version>1.0.0</version>
+        </Vedovato_VedovatoGrid>
+    </modules>
+    <global>
+        <resources>
+            <vedovato_vedovatogrid_setup>
+                <setup>
+                    <module>Vedovato_VedovatoGrid</module>
+                    <class>Vedovato_VedovatoGrid_Model_Resource_Setup</class>
+                </setup>
+            </vedovato_vedovatogrid_setup>
+        </resources>
+        <blocks>
+            <vedovato_vedovatogrid>
+                <class>Vedovato_VedovatoGrid_Block</class>
+            </vedovato_vedovatogrid>
+        </blocks>
+        <helpers>
+            <vedovato_vedovatogrid>
+                <class>Vedovato_VedovatoGrid_Helper</class>
+            </vedovato_vedovatogrid>
+        </helpers>
+        <models>
+            <vedovato_vedovatogrid>
+                <class>Vedovato_VedovatoGrid_Model</class>
+                <resourceModel>vedovato_vedovatogrid_resource</resourceModel>
+            </vedovato_vedovatogrid>
+            <vedovato_vedovatogrid_resource>
+                <class>Vedovato_VedovatoGrid_Model_Resource</class>
+                <entities>
+                    <vedovatogrid>
+                        <table>vedovato_vedovatogrid_vedovatogrid</table>
+                    </vedovatogrid>
+                    <vedovatogrid_store>
+                        <table>vedovato_vedovatogrid_vedovatogrid_store</table>
+                    </vedovatogrid_store>
+                    <vedovatogrid_comment>
+                        <table>vedovato_vedovatogrid_vedovatogrid_comment</table>
+                    </vedovatogrid_comment>
+                    <vedovatogrid_comment_store>
+                        <table>vedovato_vedovatogrid_vedovatogrid_comment_store</table>
+                    </vedovatogrid_comment_store>
+                </entities>
+            </vedovato_vedovatogrid_resource>
+        </models>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <vedovato_vedovatogrid>
+                        <class>Vedovato_VedovatoGrid_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </vedovato_vedovatogrid>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <vedovato_vedovatogrid>
+                    <file>vedovato_vedovatogrid.xml</file>
+                </vedovato_vedovatogrid>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Vedovato_VedovatoGrid>
+                    <files>
+                        <default>Vedovato_VedovatoGrid.csv</default>
+                    </files>
+                </Vedovato_VedovatoGrid>
+            </modules>
+        </translate>
+        <global_search>
+            <vedovatogrid>
+                <class>vedovato_vedovatogrid/adminhtml_search_vedovatogrid</class>
+                <acl>vedovato_vedovatogrid</acl>
+            </vedovatogrid>
+        </global_search>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Vedovato_VedovatoGrid before="Mage_Adminhtml">Vedovato_VedovatoGrid_Adminhtml</Vedovato_VedovatoGrid>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <vedovato_vedovatogrid>
+                <use>standard</use>
+                <args>
+                    <module>Vedovato_VedovatoGrid</module>
+                    <frontName>vedovatogrid</frontName>
+                </args>
+            </vedovato_vedovatogrid>
+        </routers>
+        <layout>
+            <updates>
+                <vedovato_vedovatogrid>
+                    <file>vedovato_vedovatogrid.xml</file>
+                </vedovato_vedovatogrid>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Vedovato_VedovatoGrid>
+                    <files>
+                        <default>Vedovato_VedovatoGrid.csv</default>
+                    </files>
+                </Vedovato_VedovatoGrid>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <vedovato_vedovatogrid>
+            <vedovatogrid>
+                <breadcrumbs>1</breadcrumbs>
+                <allow_comment>1</allow_comment>
+                <rss>1</rss>
+                <meta_title>vedovatogrids</meta_title>
+            </vedovatogrid>
+        </vedovato_vedovatogrid>
+    </default>
+</config>

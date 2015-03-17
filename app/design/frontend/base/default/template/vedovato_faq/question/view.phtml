@@ -1,0 +1,40 @@
+<?php
+/**
+ * Vedovato_Faq extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_Faq
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Question view template
+ *
+ * @category    Vedovato
+ * @package     Vedovato_Faq
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php $_question = $this->getCurrentQuestion();?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-title question-title">
+    <h1><?php echo $_question->getPergunta(); ?></h1>
+</div>
+<div class="question-view">
+    <div class="question-pergunta">
+        <?php echo Mage::helper('vedovato_faq')->__('Pergunta');?>:<?php echo $_question->getPergunta();?>
+
+    </div>
+    <div class="question-resposta">
+        <?php echo Mage::helper('vedovato_faq')->__('Resposta');?>:<?php echo $_question->getResposta();?>
+
+    </div>
+
+</div>

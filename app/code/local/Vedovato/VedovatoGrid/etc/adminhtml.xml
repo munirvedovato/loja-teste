@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Vedovato_VedovatoGrid extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_VedovatoGrid
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <vedovato_vedovatogrid translate="title" module="vedovato_vedovatogrid">
+                                        <title>VedovatoGrid</title>
+                                    </vedovato_vedovatogrid>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <vedovato_vedovatogrid translate="title" module="vedovato_vedovatogrid">
+                        <title>Vedovato</title>
+                        <children>
+                            <vedovatogrid translate="title" module="vedovato_vedovatogrid">
+                                <title>Vedovatogrid</title>
+                                <sort_order>0</sort_order>
+                            </vedovatogrid>
+                            <vedovatogrid_comments translate="title" module="vedovato_vedovatogrid">
+                                <title>Manage Vedovatogrid Comments</title>
+                                <sort_order>5</sort_order>
+                            </vedovatogrid_comments>
+                        </children>
+                    </vedovato_vedovatogrid>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <vedovato_vedovatogrid translate="title" module="vedovato_vedovatogrid">
+            <title>Vedovato</title>
+            <sort_order>85</sort_order>
+            <children>
+                <vedovatogrid translate="title" module="vedovato_vedovatogrid">
+                    <title>Vedovatogrid</title>
+                    <action>adminhtml/vedovatogrid_vedovatogrid</action>
+                    <sort_order>0</sort_order>
+                </vedovatogrid>
+                <vedovatogrid_comments translate="title" module="vedovato_vedovatogrid">
+                    <title>Manage Vedovatogrid Comments</title>
+                    <action>adminhtml/vedovatogrid_vedovatogrid_comment</action>
+                    <sort_order>4</sort_order>
+                </vedovatogrid_comments>
+            </children>
+        </vedovato_vedovatogrid>
+    </menu>
+</config>

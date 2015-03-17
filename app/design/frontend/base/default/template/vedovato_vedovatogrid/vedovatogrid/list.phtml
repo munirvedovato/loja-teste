@@ -1,0 +1,47 @@
+<?php 
+/**
+ * Vedovato_VedovatoGrid extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Vedovato
+ * @package        Vedovato_VedovatoGrid
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Vedovatogrid list template
+ *
+ * @category    Vedovato
+ * @package     Vedovato_VedovatoGrid
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php $_vedovatogrids = $this->getVedovatogrids(); ?>
+<div class="page-title vedovatogrid-title">
+    <?php if (Mage::helper('vedovato_vedovatogrid/vedovatogrid')->isRssEnabled()) : ?>
+        <a href="<?php echo Mage::helper('vedovato_vedovatogrid/vedovatogrid')->getRssUrl();?>" class="link-rss"><?php echo Mage::helper('vedovato_vedovatogrid')->__('Subscribe to RSS Feed')?></a>
+    <?php endif;?>
+    <h1><?php echo Mage::helper('vedovato_vedovatogrid')->__('Vedovatogrids') ?></h1>
+</div>
+<?php if ($_vedovatogrids->getSize() > 0) :?>
+    <?php echo $this->getPagerHtml(); ?>
+    <div class="vedovatogrid-list-container">
+    <?php foreach ($_vedovatogrids as $_vedovatogrid) : ?>
+        <div class="vedovatogrid-list-item">
+            <a href="<?php echo $_vedovatogrid->getVedovatogridUrl()?>">
+                <?php echo $_vedovatogrid->getNome();?>
+            </a><br />
+        </div>
+    <?php endforeach;?>
+    </div>
+    <?php echo $this->getPagerHtml(); ?>
+<?php else : ?>
+    <?php echo Mage::helper('vedovato_vedovatogrid')->__('There are no vedovatogrids at this moment');?>
+<?php endif;?>
